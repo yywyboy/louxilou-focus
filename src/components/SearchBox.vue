@@ -6,7 +6,7 @@ import { useEngines } from '../stores/engines'
 const emit = defineEmits<{ focus: []; blur: []; hover: []; leave: [] }>()
 const { getIcon, engines, setActive, activeId, activeEngine } = useEngines()
 
-const PROXY_URL = import.meta.env.VITE_SUGGEST_PROXY || '/api/suggest'
+const PROXY_URL = import.meta.env.VITE_SUGGEST_PROXY || 'https://focus-suggest.3095697053.workers.dev/suggest'
 
 const query = ref('')
 const suggestions = ref<string[]>([])
