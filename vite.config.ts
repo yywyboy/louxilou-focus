@@ -4,6 +4,8 @@ import https from 'https'
 import http from 'http'
 import iconv from 'iconv-lite'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 const SUGGEST_URLS: Record<string, string> = {
   google: 'https://suggestqueries.google.com/complete/search?client=firefox&q=',
   bing: 'https://api.bing.com/osjson.aspx?query=',
@@ -67,5 +69,5 @@ function suggestProxy() {
 }
 
 export default defineConfig({
-  plugins: [vue(), suggestProxy()],
+  plugins: [vue(), suggestProxy(), cloudflare()],
 })
